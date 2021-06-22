@@ -1,4 +1,5 @@
 interface EXIFStatic {
+    enableXmp(): void;
     getData(url: string, callback: any): any;
     getTag(img: any, tag: any): any;
     getAllTags(img: any): any;
