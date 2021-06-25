@@ -90,7 +90,6 @@
         0xA40B : "DeviceSettingDescription",    //
         0xA40C : "SubjectDistanceRange",    // Distance to subject
         0xA431 : "BodySerialNumber",        // Camera serial
-        0x002A : "AcquisitionDateTime",        // Acquisition date time
 
         // other tags
         0xA005 : "InteroperabilityIFDPointer",
@@ -1049,7 +1048,13 @@
     }
 
     EXIF.readFromBinaryFile = function(file) {
-        return findEXIFinJPEG(file);
+        const data = findEXIFinJPEG(file);
+
+        if (EXIF.isXmpEnabled) {
+            data.xmp = findXMPinJPEG(file);
+        }
+        
+        return data;
     }
 
     if (typeof define === 'function' && define.amd) {
