@@ -90,6 +90,7 @@
         0xA40B : "DeviceSettingDescription",    //
         0xA40C : "SubjectDistanceRange",    // Distance to subject
         0xA431 : "BodySerialNumber",        // Camera serial
+        0x002A : "AcquisitionDateTime",        // Acquisition date time
 
         // other tags
         0xA005 : "InteroperabilityIFDPointer",
